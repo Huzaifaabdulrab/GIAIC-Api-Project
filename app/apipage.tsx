@@ -8,7 +8,7 @@ export default function Home() {
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(true);
   useEffect(() => {
-    fetch("/api/Fetch") // Correct API endpoint
+    fetch("/pages/api/Fetch") // Correct API endpoint
       .then((res) => {
         if (!res.ok) throw new Error(`HTTP error! Status: ${res.status}`);
         return res.json();
