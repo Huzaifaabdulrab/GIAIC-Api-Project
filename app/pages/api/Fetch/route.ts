@@ -18,11 +18,14 @@ export async function GET() {
 
     const data = await response.json();
     return NextResponse.json({ success: true, data });
-  } catch (error: any) {
+  } catch (error: unknown) {
+    const errorMessage =
+      error instanceof Error ? error.message : "An unknown error occurred";
+
     return NextResponse.json({
       success: false,
       message: "An error occurred while fetching data.",
-      error: error.message,
+      error: errorMessage,
     });
   }
 }

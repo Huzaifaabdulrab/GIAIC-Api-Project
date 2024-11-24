@@ -7,9 +7,8 @@ export default function Home() {
   >([]);
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(true);
-
   useEffect(() => {
-    fetch("pages/api/Fetch") // Correct API endpoint
+    fetch("/api/Fetch") // Correct API endpoint
       .then((res) => {
         if (!res.ok) throw new Error(`HTTP error! Status: ${res.status}`);
         return res.json();
@@ -43,9 +42,9 @@ export default function Home() {
   return (
     <>
       <h1 className="text-green-800 text-3xl font-bold text-center p-4 shadow-lg">
-        Today's Posts
-      </h1>
-      <div className="flex flex-wrap gap-4 w-auto p-5 justify-center">
+  Today&apos;s Posts
+</h1>
+<div className="flex flex-wrap gap-4 w-auto p-5 justify-center">
         {posts.map((item) => (
           <div
             key={item.id}
